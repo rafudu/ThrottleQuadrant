@@ -15,7 +15,7 @@ void setup() {
   pinMode(7, INPUT_PULLUP);
   pinMode(12, INPUT_PULLUP);
   pinMode(13, INPUT_PULLUP);
-  
+
   Joystick.begin();
 
 }
@@ -37,12 +37,12 @@ void loop() {
   Joystick.setXAxis(throttle);
   Joystick.setYAxis(prop);
   Joystick.setZAxis(mixture);
-  String x = "";
-  
+
   for(byte i = 0; i < 4 ; i++){
+    // Setup buttons (using them for Flap up, Flap down, Toggle Landing Gear, Parking Breaks)
     int lastState = btnStates[i];
     int btnState = !digitalRead(btnPins[i]);
-    
+
     if(btnState != lastState){
       Joystick.setButton(i, btnState);
       btnStates[i] = btnState;
