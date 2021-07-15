@@ -8,7 +8,7 @@ Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_GAMEPAD,
   false, false, false);  // No accelerator, brake, or steering
 
 void setup() {
-//    Serial.begin(9600); // open the serial port at 9600 bps:
+  // Serial.begin(9600); // open the serial port at 9600 bps:
 
   // Initialize Joystick Library
   pinMode(6, INPUT_PULLUP);
@@ -33,7 +33,7 @@ void loop() {
   throttle = analogRead(1);
   prop = analogRead(3);
   mixture = analogRead(5);
-//  Serial.println("Throttle: "+String(throttle)+" / Propeller: "+String(prop)+" / Mixture: "+ String(mixture));
+  // Serial.println("Throttle: "+String(throttle)+" / Propeller: "+String(prop)+" / Mixture: "+ String(mixture));
   Joystick.setXAxis(throttle);
   Joystick.setYAxis(prop);
   Joystick.setZAxis(mixture);
