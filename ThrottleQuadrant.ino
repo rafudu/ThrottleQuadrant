@@ -11,6 +11,8 @@ void setup() {
   // Serial.begin(9600); // open the serial port at 9600 bps:
 
   // Initialize Joystick Library
+  // 6,7,12,13 are the inputs where i connected the wires in the arduino.
+  // This can change if you decide to plug the your wires into other inputs
   pinMode(6, INPUT_PULLUP);
   pinMode(7, INPUT_PULLUP);
   pinMode(12, INPUT_PULLUP);
@@ -30,6 +32,8 @@ int btnPins[4] = {6,7,12,13};
 
 
 void loop() {
+  // Same for 1,3 and 5: i'm using the analog inputs 1,3 and 5 in the board
+  // modify that to reflect your wiring
   throttle = analogRead(1);
   prop = analogRead(3);
   mixture = analogRead(5);
