@@ -4,11 +4,14 @@ Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_GAMEPAD,
   4, 0,                  // Button Count, Hat Switch Count
   true, true, true,     // X ,Y and Z Axis
   false, false, false,   // No Rx, Ry, or Rz
-  false, false,          // No rudder or throttle
+  false, false,          // No rudder or throttle (MSFS does not work well with this rudder / throttle control)
   false, false, false);  // No accelerator, brake, or steering
 
 void setup() {
-  // Serial.begin(9600); // open the serial port at 9600 bps:
+  // open the serial port at 9600 bps.
+  // Uncomment only when debugging.
+  // this is useful to log debug messages to the console using Serial.println()
+  // Serial.begin(9600);
 
   // Initialize Joystick Library
   // 6,7,12,13 are the inputs where i connected the wires in the arduino.
@@ -25,7 +28,9 @@ void setup() {
 int throttle = 0;
 int prop = 0;
 int mixture = 0;
-
+// Again:
+// 6,7,12,13 are the inputs where i connected the wires in the arduino.
+// This can change if you decide to plug the your wires into other inputs
 int btnStates[4] = {0,0,0,0};
 int btnPins[4] = {6,7,12,13};
 
